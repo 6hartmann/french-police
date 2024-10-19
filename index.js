@@ -1,8 +1,5 @@
 const { Client, Events, ActivityType, GatewayIntentBits } = require('discord.js');
-const { token } = require('./config.json');
-
-// define french users you want to track
-const french = ['224191281205739520'];
+const { token, french } = require('./config.json');
 
 // log into the client blah blah
 const client = new Client({
@@ -14,7 +11,7 @@ const client = new Client({
     ]
 });
 
-// run logging once after client is ready
+// run logging once after client is ready and set presence
 client.once(Events.ClientReady, readyClient => {
     console.log(`ready. logged in as: ${readyClient.user.tag}`);
     client.user.setActivity({
