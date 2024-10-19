@@ -28,7 +28,7 @@ client.once(Events.ClientReady, readyClient => {
 client.on('messageCreate', async message => {
     if(french.includes(message.author.id) && message.author.id != client.user.id){
         await message.reply('france sucks. <:CatFuckYou:1280928034601308231>');
-        console.log('harassed to the french');
+        console.log('harassed the french');
     }
 });
 
