@@ -1,0 +1,6 @@
+# ignore config including token
+config.json
+
+# ignore node shit
+node_modules/
+jspm_packages/
