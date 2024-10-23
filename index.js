@@ -32,5 +32,22 @@ client.on('messageCreate', async message => {
     }
 });
 
+/*
+    make the bot post a specific emote at a random interval of 15-30 minutes
+*/
+client.on('ready', () => {
+    function sendEmote() {
+        const channel = client.channels.cache.get('1298432458710061129');
+        var min = 900,
+            max = 1800;
+        var rand = Math.floor(Math.random() * (max - min + 1) + min);
+        channel.send('<:boohoo:1132043427115171933>')
+        console.log('Waiting for ' + rand + ' seconds to send emote again.');
+        setTimeout(sendEmote, rand * 1000);
+    }
+
+    sendEmote()
+});
+
 // actually log into discord lol
 client.login(token);
